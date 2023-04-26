@@ -1,25 +1,11 @@
-// gutenber api test
-/* async function searchEbook(ebook) {
-    const url =  `https://gutendex.com/books?search=${ebook}`
-
-    const response = await fetch(url)
-    console.log(response);
-    const data = await response.json()
-    console.log(data);
-}
-
-searchEbook('Pride and Prejudice') */
 import { getBookKey } from "./services/book-key.js";
+import { getBookInfo } from "./services/book-info.js";
+//import { getAudioBook } from "./services/audio-book.js";
+import { getEbook } from "./services/ebook.js";
+import { getBookCover } from "./services/book-cover.js";
 
-let bookKey = await getBookKey('Pride and Prejudice')
-console.log(bookKey);
+const bookKey = await getBookKey("the count");
+const bookInfo = await getBookInfo(bookKey);
+const bookCover = getBookCover(bookInfo.covers[0]);
 
-async function getBookInfo(bookKey) {
-    const url = `https://openlibrary.org${bookKey}.json`
-
-    const response = await fetch(url)
-    const data = await response.json()
-    console.log(data);
-}
-
-getBookInfo(bookKey)
+console.log(bookKey, bookInfo, bookCover);
