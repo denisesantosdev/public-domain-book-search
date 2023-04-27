@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
     <title>Public domain book search</title>
-</head>
-<body>
-    <script src="src/scripts/index.js" type="module"></script>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <main>
+      <div class="book-search-container">
+        <h1>Old Books, New Pages</h1>
+        <p>Revive the classics with our public domain book search</p>
+        <label for="book-search">Type a book title</label>
+        <input
+          type="text"
+          placeholder="e.g. Dracula"
+          id="book-search" />
+        <button id="btn search-btn">
+          <i class="fa fa-search"></i>
+          Search
+        </button>
+      </div>
+      <div class="container">
+        <img
+          src="https://placehold.co/180x220"
+          alt="" />
+        <article class="book-details">
+          <h2>Book title</h2>
+          <h3>Author name</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            modi, expedita ad maiores sed sint a atque laborum eos, accusamus
+            odit reprehenderit similique illo libero corrupti commodi error.
+            Quisquam, ab!
+          </p>
+          <a href="" class="btn download-btn">
+            <i class="fa fa-arrow-down"></i>
+            Download epub
+          </a>
+        </article>
+      </div>
+    </main>
+    <script
+      src="src/scripts/index.js"
+      type="module"></script>
+  </body>
 </html>

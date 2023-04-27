@@ -5,7 +5,7 @@ import { getEbook } from "./services/ebook.js";
 import { getBookCover } from "./services/book-cover.js";
 import { book } from "./objects/book.js";
 
-const query = "the wuthering heights";
+const query = "frankenstein";
 
 const bookKey = await getBookKey(query);
 const bookInfoOpenLibrary = await getBookInfo(bookKey);
