@@ -1,0 +1,29 @@
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: transform .1s ease;
+}
+
+.btn:is(:hover, :focus-visible){
+  transform: translateY(-4px);
+}
+
+.search-btn {
+  background-image: linear-gradient(
+    120deg,
+    var(--secondary-clr),
+    var(--secondary-clr-variant)
+  );
+  color: var(--neutral-dark);
+}
+
+.download-btn {
+  background-image: linear-gradient(
+    220deg,
+    var(--primary-clr),
+    var(--primary-clr-variant)
+  );
+  color: var(--neutral-light);
+}

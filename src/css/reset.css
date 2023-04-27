@@ -2,7 +2,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box;/* 
+  outline: 1px solid red; */
 }
 
 /* Remove default margin */
@@ -48,3 +49,10 @@ button {
   font: inherit;
 }
 
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}

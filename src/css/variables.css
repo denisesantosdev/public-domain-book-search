@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Poltawski+Nowy:wght@400;700&display=swap');
+
+:root {
+    --primary-clr: #5956E9;
+    --primary-clr-variant: #8552C9;
+    --secondary-clr: #FC9A67;
+    --secondary-clr-variant: #FC9279;
+    --neutral-light: #F1FAEE;
+    --neutral-dark: #0C1B33;
+
+    --font-header: 'Poltawski Nowy', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
