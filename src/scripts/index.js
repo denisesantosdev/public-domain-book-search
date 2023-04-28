@@ -4,13 +4,39 @@ import { getBookInfo } from "./services/book-info.js";
 import { getEbook } from "./services/ebook.js";
 import { getBookCover } from "./services/book-cover.js";
 import { book } from "./objects/book.js";
+import { screen } from "./objects/screen.js";
 
-const query = "frankenstein";
+const inputField = document.querySelector("#book-search");
+const searchBtn = document.querySelector(".search-btn");
+const downloadBtn = document.querySelector(".download-btn");
 
-const bookKey = await getBookKey(query);
-const bookInfoOpenLibrary = await getBookInfo(bookKey);
-const bookInfoGutenberg = await getEbook(query);
+const bookContainer = document.querySelector(".book");
 
-book.setBookInfo(bookInfoOpenLibrary, bookInfoGutenberg);
+let query;
 
-console.log(book);
+searchBtn.addEventListener("click", () => {
+  query = inputField.value;
+  validateEmptyInput();
+  getBookData(query);
+});
+
+inputField.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    query = inputField.value;
+    validateEmptyInput();
+    getBookData(query);
+  }
+});
+
+function validateEmptyInput() {
+  if (!query) return;
+}
+
+async function getBookData(query) {
+  const bookKey = await getBookKey(query);
+  const bookInfoOpenLibrary = await getBookInfo(bookKey);
+  const bookInfoGutenberg = await getEbook(query);
+
+  book.setBookInfo(bookInfoOpenLibrary, bookInfoGutenberg);
+  screen.renderBook(book);
+}
