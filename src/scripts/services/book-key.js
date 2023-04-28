@@ -3,8 +3,8 @@ async function getBookKey(searchQuery) {
 
   const response = await fetch(url);
   const data = await response.json();
-  const key = data.docs[0].key;
-  return key.slice(7);
+  const key = data.docs[0]?.key;
+  return key?.slice(7);
 }
 
 export { getBookKey };

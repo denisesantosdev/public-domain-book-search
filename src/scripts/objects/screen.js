@@ -7,12 +7,12 @@ const screen = {
               src="https://placehold.co/180x220"
               alt="" />
             <article class="book-details-text">
-              <h2>${book.title}</h2>
-              <h3>${book.author}</h3>
+              <h2>${book.title ?? ""}</h2>
+              <h3>${book.author ?? ""}</h3>
               <p>
-                ${book.description}
+                ${book.description ?? ""}
               </p>
-              <a href="${book.epubUrl}" class="btn download-btn">
+              <a href="${book.epubUrl ?? ""}" class="btn download-btn">
                 <i class="fa fa-arrow-down"></i>
                 Download epub
               </a>
@@ -20,6 +20,12 @@ const screen = {
         </div>
         `
     },
+    renderNotFound(){
+      this.bookContainer.innerHTML = `
+      <div class="not-found">
+        <p>Book not found 😕</p>
+      </div>`
+    }
 }
 
 export {screen}

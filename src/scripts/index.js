@@ -17,26 +17,27 @@ let query;
 searchBtn.addEventListener("click", () => {
   query = inputField.value;
   validateEmptyInput();
-  getBookData(query);
 });
 
 inputField.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
     query = inputField.value;
     validateEmptyInput();
-    getBookData(query);
   }
 });
 
 function validateEmptyInput() {
-  if (!query) return;
+  if (!inputField.value) return
+  else getBookData(query);
 }
 
 async function getBookData(query) {
   const bookKey = await getBookKey(query);
   const bookInfoOpenLibrary = await getBookInfo(bookKey);
   const bookInfoGutenberg = await getEbook(query);
-
+  
   book.setBookInfo(bookInfoOpenLibrary, bookInfoGutenberg);
-  screen.renderBook(book);
+
+  if(!bookKey) screen.renderNotFound()
+  else screen.renderBook(book);
 }
