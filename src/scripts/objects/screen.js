@@ -1,15 +1,11 @@
 const screen = {
   bookContainer: document.querySelector(".book"),
   renderBook(book) {
-   /*  let getRandomCover = () => {
-      const random = Math.floor(Math.random()*book.coverIds.length)
-      return book.coverIds[random]
-    }; */
     console.log(book.coverUrl);
     this.bookContainer.innerHTML = `
         <div class="container book-details">
             <img
-              src="${book.coverUrl}"
+              src="${book.coverUrl ?? 'https://placehold.co/180x220'}"
               alt="cover of ${book.title}" />
             <article class="book-details-text">
               <h2>${book.title ?? ""}</h2>

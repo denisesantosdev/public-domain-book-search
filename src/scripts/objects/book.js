@@ -13,7 +13,6 @@ const book = {
     this.title = source1?.title;
     this.description = source1?.description;
     this.coverIds = source1?.covers;
-    console.log(this.coverIds);
     this.coverUrl = getBookCover(this.coverIds[0]);
     this.author = source2?.authors[0].name;
     this.epubUrl = source2?.formats["application/epub+zip"];

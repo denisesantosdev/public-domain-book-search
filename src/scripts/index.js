@@ -33,10 +33,11 @@ async function getBookData(query) {
   const bookInfoOpenLibrary = await getBookInfo(bookKey);
   const bookInfoGutenberg = await getEbook(query);
   
-  book.setBookInfo(bookInfoOpenLibrary, bookInfoGutenberg);
-
   if(!bookKey) screen.renderNotFound()
-  else screen.renderBook(book);
+  else {
+    book.setBookInfo(bookInfoOpenLibrary, bookInfoGutenberg);
+    screen.renderBook(book);
+  }
 
   console.log(book);
 }
