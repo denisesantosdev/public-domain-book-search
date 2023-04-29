@@ -1,11 +1,16 @@
 const screen = {
-    bookContainer: document.querySelector(".book"),
-    renderBook(book){
-        this.bookContainer.innerHTML = `
+  bookContainer: document.querySelector(".book"),
+  renderBook(book) {
+   /*  let getRandomCover = () => {
+      const random = Math.floor(Math.random()*book.coverIds.length)
+      return book.coverIds[random]
+    }; */
+    console.log(book.coverUrl);
+    this.bookContainer.innerHTML = `
         <div class="container book-details">
             <img
-              src="https://placehold.co/180x220"
-              alt="" />
+              src="${book.coverUrl}"
+              alt="cover of ${book.title}" />
             <article class="book-details-text">
               <h2>${book.title ?? ""}</h2>
               <h3>${book.author ?? ""}</h3>
@@ -18,14 +23,14 @@ const screen = {
               </a>
             </article>
         </div>
-        `
-    },
-    renderNotFound(){
-      this.bookContainer.innerHTML = `
+        `;
+  },
+  renderNotFound() {
+    this.bookContainer.innerHTML = `
       <div class="not-found">
         <p>Book not found 😕</p>
-      </div>`
-    }
-}
+      </div>`;
+  },
+};
 
-export {screen}
+export { screen };

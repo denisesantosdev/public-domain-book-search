@@ -8,9 +8,6 @@ import { screen } from "./objects/screen.js";
 
 const inputField = document.querySelector("#book-search");
 const searchBtn = document.querySelector(".search-btn");
-const downloadBtn = document.querySelector(".download-btn");
-
-const bookContainer = document.querySelector(".book");
 
 let query;
 
@@ -40,4 +37,6 @@ async function getBookData(query) {
 
   if(!bookKey) screen.renderNotFound()
   else screen.renderBook(book);
+
+  console.log(book);
 }
