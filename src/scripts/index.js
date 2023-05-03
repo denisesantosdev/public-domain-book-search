@@ -40,8 +40,6 @@ async function getBookData(query) {
     book.setBookInfo(bookInfoOpenLibrary, bookInfoGutenberg);
     screen.renderBook(book);
   }
-
-  console.log(book);
 }
 
 function showBook() {

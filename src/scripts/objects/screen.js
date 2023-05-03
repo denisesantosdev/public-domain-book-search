@@ -1,7 +1,6 @@
 const screen = {
   bookContainer: document.querySelector(".book"),
   renderBook(book) {
-    console.log(book.coverUrl);
     this.bookContainer.innerHTML = `
         <div class="container book-details">
             <img
