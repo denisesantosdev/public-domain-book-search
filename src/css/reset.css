@@ -3,7 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;/* 
-  outline: 1px solid red; */
+  outline: 1px solid red;  */
 }
 
 /* Remove default margin */
@@ -23,7 +23,7 @@ dd {
 /* Set body defaults */
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }

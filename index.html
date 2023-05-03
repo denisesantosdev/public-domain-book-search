@@ -16,34 +16,47 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
 
-      <link rel="stylesheet" href="./src/css/reset.css">
-      <link rel="stylesheet" href="./src/css/typography.css">
-      <link rel="stylesheet" href="./src/css/variables.css">
-      <link rel="stylesheet" href="./src/css/components.css">
-      <link rel="stylesheet" href="./src/css/style.css">
+    <link
+      rel="stylesheet"
+      href="./src/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="./src/css/typography.css" />
+    <link
+      rel="stylesheet"
+      href="./src/css/variables.css" />
+    <link
+      rel="stylesheet"
+      href="./src/css/components.css" />
+    <link
+      rel="stylesheet"
+      href="./src/css/style.css" />
   </head>
   <body>
     <main>
       <div class="container book-search">
         <h1>Old Books, New Pages</h1>
         <p>Revive the classics with our public domain book search</p>
-        <label for="book-search">Type a book title:</label>
-        <input
-          type="text"
-          placeholder="e.g. Dracula"
-          id="book-search" />
-        <button class="btn search-btn">
-          <i class="fa fa-search"></i>
-          Search
-        </button>
+        <div class="search-container">
+          <label for="book-search">Type a book title:</label>
+          <input
+            type="text"
+            placeholder="e.g. Dracula"
+            id="book-search" />
+          <button class="btn search-btn">
+            <i class="fa fa-search"></i>
+            Search
+          </button>
+        </div>
       </div>
-      <div class="book appear">
-        
-      </div>
+      <div class="book appear"></div>
     </main>
     <footer>
-        <p>Created by <a href="">denisesantosdev</a></p>
-        <p>🐱‍👤</p>
+      <p>
+        Created by
+        <a href="">denisesantosdev</a>
+      </p>
+      <p>🐱‍👤</p>
     </footer>
     <script
       src="src/scripts/index.js"

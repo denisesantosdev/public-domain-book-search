@@ -5,16 +5,14 @@ body {
     var(--primary-clr-variant)
   );
   display: grid;
-  grid-template-areas:
-    "."
-    "main"
-    "main"
-    "footer";
-  overflow: hidden;
+  grid: '.' 1fr
+  'main' 3fr
+  'footer' .2fr;
 }
 
 main {
   grid-area: main;
+  height: auto;
 }
 
 .container {
@@ -22,24 +20,39 @@ main {
   margin: auto;
 }
 
+.search-container {
+  display: flex;
+  flex-direction: column;
+margin-bottom: 2rem;
+  gap: 1rem;
+}
+
 .book-search {
   color: var(--neutral-light);
   text-align: center;
+  padding-inline: 1rem;
+}
+
+.book-search h1 {
+  line-height: .9;
+  margin-bottom: 1rem;
+}
+
+.book-search p {
   margin-bottom: 2rem;
+
 }
 
 .book-search input {
   padding: 0.5rem;
   border: none;
   border-radius: 0.5rem;
-  margin-top: 2rem;
 }
 
 .book {
   background-color: var(--neutral-light);
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  height: 100%;
   transform: rotateX(100deg);
   transition: transform 1s ease;
   transform-origin: bottom;
@@ -51,6 +64,8 @@ main {
 
 .book-details {
   display: flex;
+  flex-direction: column;
+  place-items: center;
   padding: 3rem;
   gap: 2rem;
 }
@@ -67,11 +82,10 @@ main {
 footer {
   background-color: var(--neutral-light);
   text-align: center;
-  padding: 0.5rem;
+  padding: 2rem 0 0.5rem 0;
   font-size: 13px;
-  grid-area: footer;
-  align-self: end;
   z-index: 1;
+  grid-area: footer;
 }
 
 footer a {
@@ -81,3 +95,20 @@ footer a {
 .hidden {
   display: none;
 }
+
+.not-found {
+  text-align: center;
+}
+
+@media (min-width: 600px){
+  .search-container {
+    flex-direction: row;
+    place-content: center;
+    align-items: center;
+  }
+
+  .book-details {
+  flex-direction: row;
+
+  }
+} 
