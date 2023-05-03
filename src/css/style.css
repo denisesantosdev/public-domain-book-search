@@ -12,7 +12,6 @@ body {
 
 main {
   grid-area: main;
-  height: auto;
 }
 
 .container {
@@ -55,12 +54,14 @@ margin-bottom: 2rem;
   border-top-left-radius: 20px;
   transform: translateY(50%);
   opacity: 0;
-  transition: transform 3s ease-out, opacity 5s ease-out;
+  transition: transform 2s ease-out, opacity 4s ease-out;
+  min-height: 0%;
 }
 
 .book.appear {
   transform: translateY(0);
   opacity: 1;
+  min-height:70%;
 }
 
 .book-details {
@@ -99,6 +100,7 @@ footer a {
 
 .not-found {
   text-align: center;
+  padding: 2rem;
 }
 
 @media (min-width: 600px){
