@@ -14,17 +14,19 @@ let query;
 searchBtn.addEventListener("click", () => {
   query = inputField.value;
   validateEmptyInput();
+  showBook();
 });
 
 inputField.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
     query = inputField.value;
     validateEmptyInput();
+    showBook();
   }
 });
 
 function validateEmptyInput() {
-  if (!inputField.value) return
+  if (!inputField.value) return;
   else getBookData(query);
 }
 
@@ -32,12 +34,17 @@ async function getBookData(query) {
   const bookKey = await getBookKey(query);
   const bookInfoOpenLibrary = await getBookInfo(bookKey);
   const bookInfoGutenberg = await getEbook(query);
-  
-  if(!bookKey) screen.renderNotFound()
+
+  if (!bookKey) screen.renderNotFound();
   else {
     book.setBookInfo(bookInfoOpenLibrary, bookInfoGutenberg);
     screen.renderBook(book);
   }
 
   console.log(book);
+}
+
+function showBook() {
+  const bookContainer = document.querySelector(".book");
+  bookContainer.classList.add("appear");
 }

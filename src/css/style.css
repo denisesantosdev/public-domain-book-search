@@ -6,8 +6,8 @@ body {
   );
   display: grid;
   grid: '.' 1fr
-  'main' 3fr
-  'footer' .2fr;
+        'main' 3fr
+        'footer' .2fr;
 }
 
 main {
@@ -53,13 +53,14 @@ margin-bottom: 2rem;
   background-color: var(--neutral-light);
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  transform: rotateX(100deg);
-  transition: transform 1s ease;
-  transform-origin: bottom;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: transform 3s ease-out, opacity 5s ease-out;
 }
 
 .book.appear {
-  transform: rotateX(0deg);
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .book-details {
