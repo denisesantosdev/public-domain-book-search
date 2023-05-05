@@ -54,7 +54,7 @@ margin-bottom: 2rem;
   border-top-left-radius: 20px;
   transform: translateY(50%);
   opacity: 0;
-  transition: transform 2s ease-out, opacity 4s ease-out;
+  transition: transform 1s ease-out, opacity 2s ease-out;
   min-height: 0%;
 }
 
@@ -73,7 +73,7 @@ margin-bottom: 2rem;
 }
 
 .book-details p {
-  color: rgba(0, 0, 0, 0.704);
+  color: rgba(0, 0, 0, 0.799);
   margin-top: 1rem;
 }
 
