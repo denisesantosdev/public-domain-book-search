@@ -14,20 +14,21 @@ let query;
 searchBtn.addEventListener("click", () => {
   query = inputField.value;
   validateEmptyInput();
-  showBook();
 });
 
 inputField.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
     query = inputField.value;
     validateEmptyInput();
-    showBook();
   }
 });
 
 function validateEmptyInput() {
   if (!inputField.value) return;
-  else getBookData(query);
+  else {
+    getBookData(query);
+    showBookContainer();
+  }
 }
 
 async function getBookData(query) {
@@ -42,7 +43,7 @@ async function getBookData(query) {
   }
 }
 
-function showBook() {
+function showBookContainer() {
   const bookContainer = document.querySelector(".book");
   bookContainer.classList.add("appear");
 }
